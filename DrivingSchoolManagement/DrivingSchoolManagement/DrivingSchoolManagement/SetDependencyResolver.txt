@@ -1,0 +1,30 @@
+private void SetDependencyResolver()
+{
+	var container = new UnityContainer();
+	
+	container.RegisterType<IAddressRepository, AddressRepository>();
+	container.RegisterType<IAddressService, AddressService>();
+	container.RegisterType<IClientRepository, ClientRepository>();
+	container.RegisterType<IClientService, ClientService>();
+	container.RegisterType<IClientPaymentRepository, ClientPaymentRepository>();
+	container.RegisterType<IClientPaymentService, ClientPaymentService>();
+	container.RegisterType<ILessonRepository, LessonRepository>();
+	container.RegisterType<ILessonService, LessonService>();
+	container.RegisterType<IRefLessonStatusRepository, RefLessonStatusRepository>();
+	container.RegisterType<IRefLessonStatusService, RefLessonStatusService>();
+	container.RegisterType<IRefPaymentMethodRepository, RefPaymentMethodRepository>();
+	container.RegisterType<IRefPaymentMethodService, RefPaymentMethodService>();
+	container.RegisterType<IRegJobTitleRepository, RegJobTitleRepository>();
+	container.RegisterType<IRegJobTitleService, RegJobTitleService>();
+	container.RegisterType<ISchoolOfficeRepository, SchoolOfficeRepository>();
+	container.RegisterType<ISchoolOfficeService, SchoolOfficeService>();
+	container.RegisterType<IStaffRepository, StaffRepository>();
+	container.RegisterType<IStaffService, StaffService>();
+	container.RegisterType<IVehicleRepository, VehicleRepository>();
+	container.RegisterType<IVehicleService, VehicleService>();
+	
+	container.RegisterType<IConnectionFactory, ConnectionFactory>();
+	container.RegisterType<IUnitOfWork, UnitOfWork>();
+	DependencyResolver.SetResolver(new UnityResolver(container));
+}
+
